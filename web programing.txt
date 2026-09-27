@@ -1,0 +1,22 @@
+	FRONT END Languages
+
+Html
+Css
+JavaScript ( React,Angular,Vue.js )
+J.Query // JS library
+
+
+
+
+	BACK END Languages
+
+Sql
+MySql
+
+Php ( Laravel )
+
+Java ( Spring ) 
+Python ( Django ) // 6th sem outside study
+ 
+Go
+Ruby ( Ruby on Rails )

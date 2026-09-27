@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+
+{% block add %}
+
+
+
+<h2 align="center">Let Me In</h2>
+<div class="divmain" >
+
+    <div class="log" style="height: 40vh;">
+        
+        <form action="" method="post" class="form-label" >
+            <table class="table">
+                
+                <tr>
+                    <th >User Name &nbsp;&nbsp;&nbsp;&nbsp;</th>
+                    <td><input type="text"  name="uname"  class="form-control" required></td>
+                </tr>
+                <tr>
+                    <th ">Password</th>
+                    <td><input type="password" name="pass" class="form-control"required style="margin-top: 10px;"></td>
+                </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" class="btn btn-success" style="margin-top: 10px;" name="submit" value="LOGIN" ></td>
+            </tr>
+            <tr>
+                <td colspan=""2></td>
+            </tr>
+        </table>
+        
+    </form>
+</div>
+</div>
+    {% endblock %}
+
+
+

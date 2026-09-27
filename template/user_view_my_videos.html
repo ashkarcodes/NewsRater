@@ -1,0 +1,59 @@
+{% extends "userhome.html" %}
+
+{% block add %}
+
+
+
+<h1>my Videos</h1>
+<div class="viewdiv">
+
+
+<div class="viewlog">
+
+    <table class="table">
+        <tr>
+            <th>Si No</th>
+          
+            <th>video</th>
+            <th>title</th>
+            <th>details</th>
+            <th>amount</th>
+            
+
+        
+
+            
+        </tr>
+        {%for val in view%}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                
+                <td>
+                    <video controls style="max-width: 300px;max-height: 300px;">
+                        <source src="/static/media/{{val.video}}" type="{{ video.type }}" >
+                    </video>
+
+                </td>
+                <td>{{val.title}}</td>
+                <td>{{val.details}}</td>
+                <td>{{val.amount}}</td>
+               
+
+                {% if  val.status == "paid" %}
+                <!-- <td>
+                    <a class="btn btn-success"href="/userviewpayment/{{val.buy_id}}">Payment</a>
+                </td>
+               -->
+                
+               
+                {% endif %}
+               
+
+            </tr>
+            {% endfor %}
+    </table>
+
+</div>
+
+</div>
+{% endblock %}

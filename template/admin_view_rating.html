@@ -1,0 +1,64 @@
+{% extends "adminhome.html" %}
+
+{% block add %}
+
+
+
+<h1>Newschannels Rating</h1>
+<div class="viewdiv">
+    
+    
+    <div class="viewlog">
+    {% if view %}
+
+    <table class="table">
+        <tr>
+            <th>Si No</th>
+            <th>News Channnel</th>
+            <th>Video</th>
+            <th>Rating</th>
+            <th>Date</th>
+            
+
+        
+
+            
+        </tr>
+        {%for val in view%}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{val.rbuys.nchs.name}}</td>
+
+                <td>
+                    <video controls style="max-width: 300px;max-height: 300px;">
+                        <source src="/static/media/{{val.rbuys.videos.video}}" type="{{ video.type }}" >
+                    </video>
+                </td>
+                
+                <td>{{val.rated}}</td>
+                <td>{{val.date}}</td>
+                
+<!--                 
+                <td>
+                    <a class="btn btn-success"href="/viewcomments/{{val.buy_id}}">Comments</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" href="/viewratings/{{val.buy_id}}">Rating</a>
+                </td> -->
+               
+               
+
+            </tr>
+            {% endfor %}
+    </table>
+
+    {% else  %}
+    
+    <h1>No One Have Rated Yet</h1>
+    
+    {% endif %}
+</div>
+
+</div>
+
+{% endblock %}

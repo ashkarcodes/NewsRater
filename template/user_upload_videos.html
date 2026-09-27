@@ -1,0 +1,46 @@
+{% extends 'userhome.html' %}
+{% block add %}
+<h1 align="center">User Upload videos</h1>
+<div class="divmain">
+
+<div class="log">
+
+    <form action="" method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <th>Video Title</th>
+                <td><input type="text" name="title" class="form-control text-feild" {% if updhr %} value="{{updhr.fname}}" {% endif %} id="" required ></td>
+            </tr>
+
+           
+            <tr>
+                <th>Video</th>
+                <td><input type="file" name="upload" class="form-control text-feild" id="" {% if updhr %} value="{{updhr.place}}" {% endif %} required ></td>
+            </tr>
+  
+   
+            <tr>
+                <th>amount</th>
+                <td><input type="number" name="amount" class="form-control text-feild" id="" {% if updhr %} value="{{updhr.phone}}" {% endif %} required maxlength="10" ></td>
+            </tr>
+
+            <tr>
+                <th>details</th>
+                <td><input type="text" name="det" class="form-control text-feild" id="" {% if updhr %} value="{{updhr.email}}" {% endif %} required ></td>
+            </tr>
+
+          
+          
+            
+            <tr>
+            
+                <td colspan="2" align="center"><input type="submit" class="btn btn-success" name="sub" id="" required value="ADD" ></td>
+            </tr>
+            
+        </table>
+    </form>
+
+</div>
+</div>
+
+{% endblock %}

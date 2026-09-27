@@ -1,0 +1,51 @@
+{% extends "newshome.html" %}
+
+{% block add %}
+
+
+
+<h1>Comments Details</h1>
+<div class="viewdiv">
+
+
+<div class="viewlog">
+
+    <table class="table">
+        <tr>
+            <th>Si No</th>
+            <th>User Name</th>
+            <th>Comments</th>
+            <th>date</th>
+            
+            
+
+        
+
+            
+        </tr>
+        {%for val in view%}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{val.cusers.fname}}</td>
+                <td>{{val.reply}}</td>
+                <td>{{val.date}}</td>
+
+                
+                
+                <!-- <td>
+                    <a class="btn btn-success"href="/viewcomments/{{val.buy_id}}">Comments</a>
+                </td> -->
+                <!-- <td>
+                    <a class="btn btn-danger" href="/rejtnch/{{val.clogins_id}}">Reject</a>
+                </td> -->
+               
+               
+
+            </tr>
+            {% endfor %}
+    </table>
+
+</div>
+
+</div>
+{% endblock %}

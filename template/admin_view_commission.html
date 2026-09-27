@@ -1,0 +1,49 @@
+{% extends "adminhome.html" %}
+
+{% block add %}
+
+
+
+<h1>Commission Details</h1>
+<div class="viewdiv">
+
+
+<div class="viewlog">
+
+    <table class="table">
+        <tr>
+            <th>Si No</th>
+            
+            
+            
+          
+            <th>date</th>
+            <th>status</th>
+            <th>Commission</th>
+
+        
+
+            
+        </tr>
+        {%for val in view%}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                
+               
+                <td>{{val.combuys.date}}</td>
+                <td>{{val.combuys.status}}</td>
+                <td>{{val.amount}}</td>
+                
+
+                
+               
+            
+
+            </tr>
+            {% endfor %}
+    </table>
+
+</div>
+
+</div>
+{% endblock %}

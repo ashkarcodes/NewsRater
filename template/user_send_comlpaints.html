@@ -1,0 +1,68 @@
+{% extends 'userhome.html' %}
+{% block add %}
+<h1 align="center">Send Complaints</h1>
+<div class="divmain" style="height: 40vh ;">
+
+
+<div class="log">
+
+    <form action="" method="post">
+        <table>
+            <tr>
+                <th>complaint</th>
+                <td><input type="text" name="comp" class="form-control text-feild"  id="" required ></td>
+            </tr>
+    
+           
+         
+
+            <tr>
+            
+                <td colspan="2" align="center"><input type="submit" class="btn  btn-success " name="sub" id="" required value="ADD" ></td>
+            </tr>
+            
+        </table>
+    </form>
+</div>
+</div>
+
+{% if upddesi %}
+
+{% else %}
+
+{% if view %}
+
+<h1 >Complaints & reply</h1>
+<div class="viewdiv">
+<div class="log">
+
+    <table class="table">
+        <tr>
+            <th>Si No</th>
+            <th>Complaint</th>
+            <th>reply</th>
+            <th>date</th>
+          
+        </tr>
+        {%for val in view%}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{val.complaint}}</td>
+                <td>{{val.reply}}</td>
+                <td>{{val.date}}</td>
+                
+                
+
+            </tr>
+            {% endfor %}
+    </table>
+
+</div>
+{% else %}
+<h2 align="center">No designation Added Right Now </h2>
+{% endif %}
+
+
+{% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "newshome.html" %}
+
+{% block add %}
+
+
+
+<h1>Videos</h1>
+<div class="viewdiv">
+
+
+<div class="viewlog">
+
+    <table class="table">
+        <tr>
+            <th>Si No</th>
+            <th>Uploader</th>
+            <th>video</th>
+            <th>title</th>
+            <th>details</th>
+            <th>amount</th>
+          
+
+        
+
+            
+        </tr>
+        {%for val in view%}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{val.users.fname}}</td>
+                <td>
+                    <video controls style="max-width: 300px;max-height: 300px;">
+                        <source src="/static/media/{{val.video}}" type="{{ video.type }}" >
+                    </video>
+
+                </td>
+                <td>{{val.title}}</td>
+                <td>{{val.details}}</td>
+                <td>{{val.amount}}</td>
+               
+                
+
+               
+                <td>
+                    <a class="btn btn-success"href="/buyvideo/{{val.video_id}}/{{val.amount}}">buy Video</a>
+                </td>
+                <td>
+                    <a class="btn btn-success"href="/newsviewcomments/{{val.video_id}}">Comments</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" href="/newsviewratings/{{val.video_id}}">Rating</a>
+                </td>
+                
+               
+           
+               
+
+            </tr>
+            {% endfor %}
+    </table>
+
+</div>
+
+</div>
+{% endblock %}

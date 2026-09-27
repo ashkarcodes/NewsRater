@@ -1,0 +1,52 @@
+{% extends "adminhome.html" %}
+
+{% block add %}
+
+
+
+<h1>Newschannel Details</h1>
+<div class="viewdiv">
+
+
+<div class="viewlog">
+
+    <table class="table">
+        <tr>
+            <th>Si No</th>
+            <th>News Channnel</th>
+            <th>place</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>status</th>
+
+        
+
+            
+        </tr>
+        {%for val in view%}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{val.name}}</td>
+                <td>{{val.place}}</td>
+                <td>{{val.phone}}</td>
+                <td>{{val.email}}</td>
+                <td>{{val.clogins.usertype}}</td>
+                
+                {% if  val.clogins.usertype == "pending" %}
+                <td>
+                    <a class="btn btn-success"href="/acptnch/{{val.clogins_id}}">Accept</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" href="/rejtnch/{{val.clogins_id}}">Reject</a>
+                </td>
+               
+                {% endif %}
+
+            </tr>
+            {% endfor %}
+    </table>
+
+</div>
+
+</div>
+{% endblock %}

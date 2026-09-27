@@ -1,0 +1,81 @@
+{% extends "userhome.html" %}
+
+{% block add %}
+
+<h1 align="center">Add Comments</h1>
+<div class="divmain" style="height: 40vh;">
+
+<div class="log">
+
+    <form action="" method="post">
+        <table>
+            
+
+            <tr>
+                <th>comment</th>
+                <td><input type="text" class="form-control text-feild" name="com" {% if updben %} value="{{updben.benifit_name}}" {% endif %} id="" required ></td>
+            </tr>
+
+            
+    
+           
+         
+
+            <tr>
+            
+                <td colspan="2" align="center"><input type="submit" name="sub" id="" class="btn btn-success" required value="Submit" ></td>
+            </tr>
+            
+        </table>
+    </form>
+
+</div>
+</div>
+
+
+
+<h1>Comments Details</h1>
+<div class="viewdiv">
+
+
+<div class="viewlog">
+
+    <table class="table">
+        <tr>
+            <th>Si No</th>
+            <th>User Name</th>
+            <th>Comments</th>
+            <th>date</th>
+            
+            
+
+        
+
+            
+        </tr>
+        {%for val in view%}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{val.cusers.fname}}</td>
+                <td>{{val.reply}}</td>
+                <td>{{val.date}}</td>
+
+                
+                
+                <!-- <td>
+                    <a class="btn btn-success"href="/viewcomments/{{val.buy_id}}">Comments</a>
+                </td> -->
+                <!-- <td>
+                    <a class="btn btn-danger" href="/rejtnch/{{val.clogins_id}}">Reject</a>
+                </td> -->
+               
+               
+
+            </tr>
+            {% endfor %}
+    </table>
+
+</div>
+
+</div>
+{% endblock %}

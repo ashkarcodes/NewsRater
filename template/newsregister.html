@@ -1,0 +1,57 @@
+{% extends 'index.html' %}
+{% block add %}
+<h1 align="center">News Channel Registration</h1>
+<div class="divmain">
+
+<div class="log">
+
+    <form action="" method="post">
+        <table>
+            <tr>
+                <th>channel Name</th>
+                <td><input type="text" name="fname" class="form-control text-feild" {% if updhr %} value="{{updhr.fname}}" {% endif %} id="" required ></td>
+            </tr>
+
+           
+            <tr>
+                <th>Place</th>
+                <td><input type="text" name="place" class="form-control text-feild" id="" {% if updhr %} value="{{updhr.place}}" {% endif %} required ></td>
+            </tr>
+  
+   
+            <tr>
+                <th>Phone</th>
+                <td><input type="text" name="phone" class="form-control text-feild" pattern={0-9}[10] title="Please enter a 10-digit number" id="" {% if updhr %} value="{{updhr.phone}}" {% endif %} required maxlength="10" minlength="10"></td>
+            </tr>
+
+            <tr>
+                <th>Email</th>
+                <td><input type="email" name="email" pattern="[a-z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{3,}$" class="form-control text-feild" id="" {% if updhr %} value="{{updhr.email}}" {% endif %} required ></td>
+            </tr>
+
+          
+          
+            <tr>
+                <th>Username</th>
+                <td><input type="text" name="uname" id="" class="form-control text-feild" required ></td>
+            </tr>
+          
+            <tr>
+                <th>Password</th>
+                <td> <input type="password" name="pass"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title="Password must contain at least one digit, one lowercase letter, one uppercase letter, and be at least 8 characters long." required id="" class="form-control text-feild"  ></td>
+            </tr>
+          
+
+            <tr>
+            
+                <td colspan="2" align="center"><input type="submit" class="btn btn-success" name="sub" id="" required value="ADD" ></td>
+            </tr>
+            
+        </table>
+    </form>
+
+</div>
+</div>
+
+{% endblock %}

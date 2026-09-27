@@ -1,0 +1,62 @@
+{% extends "userhome.html" %}
+
+{% block add %}
+
+
+
+<h1>Newschannels Details</h1>
+
+{% if view %}
+
+<div class="viewdiv">
+
+
+<div class="viewlog">
+
+    <table class="table">
+        <tr>
+            <th>Si No</th>
+            <th>News Channnel</th>
+            <th>place</th>
+            <th>Phone</th>
+            <th>Email</th>
+            
+
+        
+
+            
+        </tr>
+        {%for val in view%}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{val.nchs.name}}</td>
+                <td>{{val.nchs.place}}</td>
+                <td>{{val.nchs.phone}}</td>
+                <td>{{val.nchs.email}}</td>
+                
+                
+                <td>
+                    <a class="btn btn-success"href="/addcomments/{{val.buy_id}}">Add Comments</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" href="/addratings/{{val.buy_id}}">Add Ratig</a>
+                </td>
+               
+               
+
+            </tr>
+            {% endfor %}
+    </table>
+
+    {% else %}
+
+    <h1>No One Purchased This Video Yet</h1>
+
+
+    {% endif %}
+
+</div>
+
+
+</div>
+{% endblock %}

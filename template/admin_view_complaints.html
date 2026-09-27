@@ -1,0 +1,92 @@
+{% extends "adminhome.html" %}
+
+{% block add %}
+
+{% if viewes %}
+
+<h1 align="center">Send Reply</h1>
+<div class="divmain">
+    
+    <div class="log" style="height: 40vh;">
+
+    <form action="" method="post">
+        <table>
+            <tr>
+                <th>Complaint</th>
+                <td><input type="text" name="fname" class="form-control text-feild" disabled  {% if viewes %} value="{{viewes.complaint}}" {% endif %} id="" required ></td>
+            </tr>
+    
+            <tr>
+                <th>reply</th>
+                <td><input type="text" name="reply" class="form-control text-feild" id=""  ></td>
+            </tr>
+        
+            
+
+            <tr>
+            
+                <td colspan="2" align="center"><input type="submit" class="btn btn-success" name="sub" id="" required value="ADD" ></td>
+            </tr>
+            
+        </table>
+    </form>
+
+</div>
+</div>
+
+
+
+{% elif view %}
+
+<h1>Complaints</h1>
+
+<div class="viewdiv">
+
+
+<div class="viewlog">
+
+    <table class="table">
+        <tr>
+            <th>Si No</th>
+            <th>Username</th>
+            <th>Complaint</th>
+            <th>Reply</th>
+            <th>Date</th>
+            
+
+        
+
+            
+        </tr>
+        {%for val in view%}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{val.comusers.fname}}</td>
+                <td>{{val.complaint}}</td>
+                <td>{{val.reply}}</td>
+                <td>{{val.date}}</td>
+                
+                {% if val.reply == 'pending' %}
+                
+                <td>
+                    <a class="btn btn-success"href="/sendreply/{{val.comp_id}}">Reply</a>
+                </td>
+              {% endif %}
+               
+               
+
+            </tr>
+            {% endfor %}
+    </table>
+</div>
+</div>
+    {% else  %}
+
+    <h1>No Comaplaint Yet</h1>
+ 
+
+
+
+
+{% endif %}
+{% endblock %}

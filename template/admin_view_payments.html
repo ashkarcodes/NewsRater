@@ -1,0 +1,47 @@
+{% extends "adminhome.html" %}
+
+{% block add %}
+
+
+
+<h1>Payment Details</h1>
+<div class="viewdiv">
+
+
+<div class="viewlog">
+
+    <table class="table">
+        <tr>
+            <th>Si No</th>
+            
+            
+            
+            <th>amoount</th>
+            <th>date</th>
+            <th>status</th>
+
+        
+
+            
+        </tr>
+        {%for val in view%}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                
+                <td>{{val.amount}}</td>
+                <td>{{val.date}}</td>
+                <td>{{val.buys.status}}</td>
+                
+
+                
+               
+            
+
+            </tr>
+            {% endfor %}
+    </table>
+
+</div>
+
+</div>
+{% endblock %}

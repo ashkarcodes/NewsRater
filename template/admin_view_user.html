@@ -1,0 +1,41 @@
+{% extends "adminhome.html" %}
+
+{% block add %}
+
+
+
+<h1>User Details</h1>
+<div class="viewdiv">
+
+
+<div class="viewlog">
+
+    <table class="table">
+        <tr>
+            <th>Si No</th>
+            <th>firstname</th>
+            <th>Last name</th>
+            <th>place</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>status</th>
+        </tr>
+        {%for val in view%}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{val.fname}}</td>
+                <td>{{val.lname}}</td>
+                <td>{{val.place}}</td>
+                <td>{{val.phone}}</td>
+                <td>{{val.email}}</td>
+                <td>{{val.ulogins.usertype}}</td>
+
+
+            </tr>
+            {% endfor %}
+    </table>
+
+</div>
+
+</div>
+{% endblock %}

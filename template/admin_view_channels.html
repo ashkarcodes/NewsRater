@@ -1,0 +1,53 @@
+{% extends "adminhome.html" %}
+
+{% block add %}
+
+
+
+<h1>Newschannels Details</h1>
+
+<div class="viewdiv">
+
+
+<div class="viewlog">
+
+    <table class="table">
+        <tr>
+            <th>Si No</th>
+            <th>News Channnel</th>
+            <th>place</th>
+            <th>Phone</th>
+            <th>Email</th>
+            
+
+        
+
+            
+        </tr>
+        {%for val in view%}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{val.nchs.name}}</td>
+                <td>{{val.nchs.place}}</td>
+                <td>{{val.nchs.phone}}</td>
+                <td>{{val.nchs.email}}</td>
+                
+                
+                <td>
+                    <a class="btn btn-success"href="/viewcomments/{{val.buy_id}}">Comments</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" href="/viewratings/{{val.buy_id}}">Rating</a>
+                </td>
+               
+               
+
+            </tr>
+            {% endfor %}
+    </table>
+
+</div>
+
+
+</div>
+{% endblock %}
